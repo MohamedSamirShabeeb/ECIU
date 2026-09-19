@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrepreneurship Club-IU | Student Registration</title>
+    <title>ENTREPRENEURSHIP CLUB-IU | Student Registration</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,45 +11,48 @@
     <!-- Font Awesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: Plus Jakarta Sans & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS Custom Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        brand: ['"Montserrat"', 'sans-serif'],
                     },
                     colors: {
                         brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            accent: '#3b82f6',
-                            purple: '#8b5cf6',
-                            dark: '#0b0f17',
-                            card: '#131b2e',
-                            border: '#1e293b'
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#593c8f', // Logo core purple
+                            600: '#4c307a',
+                            700: '#3e2466',
+                            800: '#2f1a50',
+                            900: '#1e0e37',
+                            lightBg: '#f8f7fc',
+                            cardBg: '#ffffff',
+                            accent: '#6b46c1'
                         }
                     },
                     animation: {
-                        'pulse-glow': 'pulseGlow 2.5s infinite',
+                        'pulse-glow': 'pulseGlow 3s infinite',
                         'float': 'float 4s ease-in-out infinite'
                     },
                     keyframes: {
                         pulseGlow: {
-                            '0%, 100%': { opacity: 0.8, boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' },
-                            '50%': { opacity: 1, boxShadow: '0 0 30px rgba(34, 197, 94, 0.6)' }
+                            '0%, 100%': { opacity: 0.9, boxShadow: '0 0 20px rgba(89, 60, 143, 0.2)' },
+                            '50%': { opacity: 1, boxShadow: '0 0 35px rgba(89, 60, 143, 0.4)' }
                         },
                         float: {
                             '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-8px)' }
+                            '50%': { transform: 'translateY(-6px)' }
                         }
                     }
                 }
@@ -57,61 +60,65 @@
         }
     </script>
 
-    <!-- Custom CSS Styles -->
     <style>
         body {
-            background-color: #0b0f17;
-            color: #f3f4f6;
+            background-color: #f8f7fc;
+            color: #1e1b2e;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
         .glass-card {
-            background: rgba(19, 27, 46, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(89, 60, 143, 0.12);
+            box-shadow: 0 10px 30px -5px rgba(89, 60, 143, 0.05);
         }
         .glass-nav {
-            background: rgba(11, 15, 23, 0.85);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(89, 60, 143, 0.12);
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #4ade80 0%, #3b82f6 50%, #a855f7 100%);
+        .gradient-purple-text {
+            background: linear-gradient(135deg, #593c8f 0%, #7c3aed 50%, #4c307a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gradient-border {
-            position: relative;
-            border-radius: 1rem;
-            background: linear-gradient(135deg, #22c55e, #3b82f6);
-            padding: 1px;
+        .bg-purple-gradient {
+            background: linear-gradient(135deg, #593c8f 0%, #6d42be 100%);
         }
-        .gradient-border-inner {
-            background: #131b2e;
-            border-radius: calc(1rem - 1px);
+        .bg-purple-subtle {
+            background: linear-gradient(135deg, #f3effb 0%, #ede7f8 100%);
         }
     </style>
 </head>
-<body class="antialiased text-slate-200 selection:bg-brand-500 selection:text-white">
+<body class="antialiased text-slate-800 selection:bg-brand-500 selection:text-white">
 
-    <!-- Navigation Bar -->
     <nav class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo / Brand Title -->
+                <!-- Brand Title with SVG Icon (Brain + Tree + Lightning) -->
                 <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-emerald-400 to-blue-500 flex items-center justify-center text-slate-900 font-black text-xl shadow-lg shadow-brand-500/20">
-                        IU
-                    </div>
+                    <svg class="w-10 h-10 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" rx="28" fill="#593C8F"/>
+                        <!-- Center Divider Line -->
+                        <line x1="50" y1="18" x2="50" y2="82" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Left Side: Tree Branches -->
+                        <path d="M50 72L50 35" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M50 60L35 48M35 48L28 50M35 48L32 38" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50 45L40 35M40 35L34 37" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50 32L44 25" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+                        <!-- Right Side: Lightning Bolt -->
+                        <path d="M68 28L56 50H66L54 74" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     <div>
-                        <span class="font-extrabold text-lg md:text-xl tracking-tight text-white block">E-Club <span class="text-brand-500">IU</span></span>
-                        <span class="text-xs text-slate-400 font-medium block -mt-1">Entrepreneurship Club</span>
+                        <span class="font-brand font-black text-base sm:text-lg tracking-tight text-brand-900 block uppercase leading-tight">ENTREPRENEURSHIP CLUB-IU</span>
+                        <span class="text-xs text-brand-600 font-semibold tracking-wider block">STUDENT REGISTRATION</span>
                     </div>
                 </div>
 
                 <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+                <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-wider text-slate-600">
                     <a href="#process" class="hover:text-brand-500 transition-colors">How to Join</a>
                     <a href="#cycles" class="hover:text-brand-500 transition-colors">Cycles Info</a>
                     <a href="#form-section" class="hover:text-brand-500 transition-colors">Registration Form</a>
@@ -120,140 +127,138 @@
 
                 <!-- Primary CTA Button -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="#process" class="bg-gradient-to-r from-brand-500 to-emerald-600 hover:from-brand-600 hover:to-emerald-700 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-0.5">
-                        Register Now <i class="fa-solid font-bold fa-arrow-right ml-1 text-xs"></i>
+                    <a href="#form-section" class="bg-purple-gradient text-white font-bold px-5 py-2.5 rounded-xl shadow-md shadow-brand-500/20 hover:shadow-brand-500/35 hover:scale-[1.02] transition-all text-xs uppercase tracking-wider">
+                        Register Now <i class="fa-solid fa-arrow-right ml-1"></i>
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl"></i>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-brand-900 hover:text-brand-500 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#process" class="block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-slate-800 hover:text-brand-500">How to Join</a>
-            <a href="#cycles" class="block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-slate-800 hover:text-brand-500">Cycles Info</a>
-            <a href="#form-section" class="block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-slate-800 hover:text-brand-500">Registration Form</a>
-            <a href="#faq" class="block px-3 py-2 rounded-lg font-medium text-slate-200 hover:bg-slate-800 hover:text-brand-500">FAQ</a>
-            <a href="#process" class="block w-full text-center bg-brand-500 text-slate-950 font-bold py-3 rounded-xl mt-4">Register Now</a>
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-b border-brand-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#process" class="block px-3 py-2 rounded-lg font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-500">How to Join</a>
+            <a href="#cycles" class="block px-3 py-2 rounded-lg font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-500">Cycles Info</a>
+            <a href="#form-section" class="block px-3 py-2 rounded-lg font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-500">Registration Form</a>
+            <a href="#faq" class="block px-3 py-2 rounded-lg font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-500">FAQ</a>
+            <a href="#form-section" class="block w-full text-center bg-purple-gradient text-white font-bold py-3 rounded-xl mt-4">Register Now</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <!-- Background Decorative Glows -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/15 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-blue-500/15 rounded-full blur-[100px] pointer-events-none"></div>
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <!-- Light Background Subtle Glow Spheres -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-100/60 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-purple-200/40 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto space-y-6">
-                <!-- Status Pill -->
-                <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700/80 rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold text-brand-500 shadow-inner">
+            <div class="text-center max-w-4xl mx-auto space-y-6">
+                
+                <!-- Logo Badge Display -->
+                <div class="inline-flex items-center space-x-3 bg-white border border-brand-200 px-4 py-2 rounded-full shadow-sm text-xs font-bold text-brand-600 uppercase tracking-widest animate-float">
                     <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
-                    <span>Official IU Registration Portal</span>
-                    <span class="text-slate-500">•</span>
-                    <span class="text-slate-300">2026 / 2027</span>
+                    <span>OFFICIAL STUDENT REGISTRATION PORTAL</span>
                 </div>
 
-                <!-- Main Title -->
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                    Turn Your Ideas Into Realities with <span class="gradient-text">E-Club IU</span>
+                <!-- Main Title with No Abbreviations -->
+                <h1 class="font-brand text-3xl sm:text-5xl lg:text-6xl font-black text-brand-900 leading-tight tracking-tight uppercase">
+                    ENTREPRENEURSHIP CLUB-IU
                 </h1>
 
                 <!-- Subtitle -->
-                <p class="text-lg sm:text-xl text-slate-400 font-normal leading-relaxed">
-                    Join the premier student entrepreneurship ecosystem at IU. Connect with innovative minds, access mentorship, participate in pitch events, and launch your venture.
+                <p class="text-base sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
+                    Join the student hub for innovation, leadership, and startup acceleration. Connect with mentors, build real projects, and access exclusive university pitch programs.
                 </p>
 
-                <!-- Crucial Requirement Banner -->
-                <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-sm sm:text-base flex items-start sm:items-center space-x-3 text-left max-w-2xl mx-auto shadow-lg">
-                    <div class="p-2 bg-amber-500/20 rounded-xl text-amber-400 shrink-0">
-                        <i class="fa-solid fa-circle-exclamation text-lg"></i>
+                <!-- Mandatory Requirement Alert Box -->
+                <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-sm sm:text-base flex items-start sm:items-center space-x-4 text-left max-w-3xl mx-auto shadow-sm">
+                    <div class="p-2.5 bg-amber-500 text-white rounded-xl shrink-0">
+                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
                     </div>
                     <div>
-                        <strong class="font-semibold block text-white">Registration Requirement:</strong>
-                        You must complete the official registration form before joining the WhatsApp group links.
+                        <strong class="font-bold block text-amber-950">Important Requirement:</strong>
+                        All students must submit the official Google Registration Form <strong>before joining</strong> any of the WhatsApp community groups.
                     </div>
                 </div>
 
                 <!-- Action CTA Buttons -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="#form-section" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-base shadow-xl shadow-brand-500/20 hover:shadow-brand-500/35 transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-file-pen"></i>
-                        <span>Step 1: Fill Registration Form</span>
+                    <a href="#form-section" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-purple-gradient text-white font-bold text-base shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-file-pen text-lg"></i>
+                        <span>Step 1: Complete Registration Form</span>
                     </a>
-                    <a href="#cycles" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-base border border-slate-700 transition-all flex items-center justify-center space-x-2">
-                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                    <a href="#cycles" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-brand-900 hover:bg-brand-50 font-bold text-base border border-brand-200 shadow-sm transition-all flex items-center justify-center space-x-3">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
                         <span>Step 2: Join WhatsApp Groups</span>
                     </a>
                 </div>
 
-                <!-- Quick Stats / Highlights -->
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-10 text-center max-w-2xl mx-auto">
+                <!-- Feature Badges -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-8 text-center max-w-2xl mx-auto">
                     <div class="glass-card p-4 rounded-2xl">
-                        <div class="text-2xl font-bold text-white">2 Active</div>
-                        <div class="text-xs text-slate-400 font-medium">Club Cycles</div>
+                        <div class="text-xl sm:text-2xl font-extrabold text-brand-500">Active Community</div>
+                        <div class="text-xs text-slate-500 font-medium">All Student Majors</div>
                     </div>
                     <div class="glass-card p-4 rounded-2xl">
-                        <div class="text-2xl font-bold text-brand-500">100% Free</div>
-                        <div class="text-xs text-slate-400 font-medium">Student Membership</div>
+                        <div class="text-xl sm:text-2xl font-extrabold text-brand-500">100% Free</div>
+                        <div class="text-xs text-slate-500 font-medium">Official University Club</div>
                     </div>
                     <div class="glass-card p-4 rounded-2xl col-span-2 md:col-span-1">
-                        <div class="text-2xl font-bold text-blue-400">Nov 2026</div>
-                        <div class="text-xs text-slate-400 font-medium">Cycle 2 Kickoff</div>
+                        <div class="text-xl sm:text-2xl font-extrabold text-brand-500">2 Cycles</div>
+                        <div class="text-xs text-slate-500 font-medium">Cycle 1 & Cycle 2</div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Registration Process Section -->
-    <section id="process" class="py-20 bg-slate-900/50 relative border-y border-slate-800">
+    <section id="process" class="py-16 bg-white border-y border-brand-100 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Simple Workflow</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">How To Successfully Join</h3>
-                <p class="text-slate-400 mt-3">Follow these two steps to ensure your membership application is recorded and verified.</p>
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Two Easy Steps</h2>
+                <h3 class="font-brand text-2xl sm:text-3xl font-black text-brand-900 uppercase">Registration Workflow</h3>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Follow the official onboarding steps to guarantee your membership verification.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 relative max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto relative">
                 <!-- Step 1 Card -->
-                <div class="glass-card p-8 rounded-3xl relative hover:border-brand-500/50 transition-all">
-                    <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-500 to-emerald-400 text-slate-950 font-black text-xl flex items-center justify-center shadow-lg">
+                <div class="glass-card p-8 rounded-3xl relative border-2 border-brand-200 hover:border-brand-500 transition-all">
+                    <div class="absolute -top-5 -left-3 w-12 h-12 rounded-2xl bg-purple-gradient text-white font-black text-xl flex items-center justify-center shadow-md">
                         1
                     </div>
-                    <div class="mt-2 mb-4 text-brand-500 text-2xl">
+                    <div class="mt-2 mb-3 text-brand-500 text-3xl">
                         <i class="fa-solid fa-clipboard-list"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Fill the Google Form</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Provide your student details, interest areas, and background information on the official IU registration form.
+                    <h4 class="text-xl font-bold text-brand-900 mb-2">Fill Student Information Form</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Provide your official student details and areas of interest using the official Google Form below.
                     </p>
-                    <a href="#form-section" class="inline-flex items-center space-x-2 text-sm font-bold text-brand-500 hover:text-brand-400 transition-colors">
-                        <span>Go to Form Below</span>
+                    <a href="#form-section" class="inline-flex items-center space-x-2 text-sm font-bold text-brand-500 hover:text-brand-600">
+                        <span>Go to Embedded Form</span>
                         <i class="fa-solid fa-arrow-down text-xs"></i>
                     </a>
                 </div>
 
                 <!-- Step 2 Card -->
-                <div class="glass-card p-8 rounded-3xl relative hover:border-emerald-500/50 transition-all">
-                    <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-slate-950 font-black text-xl flex items-center justify-center shadow-lg">
+                <div class="glass-card p-8 rounded-3xl relative border-2 border-brand-200 hover:border-emerald-500 transition-all">
+                    <div class="absolute -top-5 -left-3 w-12 h-12 rounded-2xl bg-emerald-600 text-white font-black text-xl flex items-center justify-center shadow-md">
                         2
                     </div>
-                    <div class="mt-2 mb-4 text-emerald-400 text-2xl">
+                    <div class="mt-2 mb-3 text-emerald-600 text-3xl">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Join Your WhatsApp Group</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Select either <strong>Cycle 1 (Immediate)</strong> or <strong>Cycle 2 (Starting in November)</strong> and join the official group.
+                    <h4 class="text-xl font-bold text-brand-900 mb-2">Join WhatsApp Community Group</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Choose between <strong>Cycle 1 (Active)</strong> or <strong>Cycle 2 (Starting in November)</strong> and join your group.
                     </p>
-                    <a href="#cycles" class="inline-flex items-center space-x-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
-                        <span>Choose Your Cycle Group</span>
+                    <a href="#cycles" class="inline-flex items-center space-x-2 text-sm font-bold text-emerald-600 hover:text-emerald-700">
+                        <span>Select Your Cycle Group</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
                 </div>
@@ -261,131 +266,129 @@
         </div>
     </section>
 
-    <!-- Cycles & WhatsApp Links Section -->
-    <section id="cycles" class="py-20 relative">
+    <section id="cycles" class="py-20 relative bg-brand-lightBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Official Community Groups</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Select Your Club Cycle</h3>
-                <p class="text-slate-400 mt-3">Choose the cycle that fits your schedule and join the corresponding WhatsApp community.</p>
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">COMMUNITY GROUPS</h2>
+                <h3 class="font-brand text-2xl sm:text-3xl font-black text-brand-900 uppercase">Select Your Club Cycle</h3>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Join the corresponding WhatsApp group for official communications and team updates.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
                 <!-- Cycle 1 Box -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-slate-800 hover:border-brand-500/50 transition-all group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl group-hover:bg-brand-500/20 transition-all"></div>
+                <div class="bg-white rounded-3xl p-8 border-2 border-brand-200 hover:border-brand-500 transition-all shadow-md flex flex-col justify-between relative overflow-hidden group">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="px-3 py-1 bg-brand-500/20 border border-brand-500/40 text-brand-400 text-xs font-extrabold rounded-full uppercase tracking-wider">
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-black rounded-full uppercase tracking-wider">
                                     Active Now
                                 </span>
-                                <h4 class="text-2xl font-bold text-white mt-3">Entrepreneurship Club Cycle 1</h4>
+                                <h4 class="text-2xl font-bold text-brand-900 mt-3">ENTREPRENEURSHIP CLUB CYCLE 1</h4>
                             </div>
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl shrink-0">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </div>
                         </div>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Immediate community access for currently active student batches. Participating members receive real-time announcements, current workshops, and immediate pitch updates.
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Active community for current club operations, workshops, hackathons, and internal announcements.
                         </p>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-circle-check text-brand-500 text-xs"></i>
-                                <span>Immediate group discussions & news</span>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
+                                <span>Immediate access to ongoing club events</span>
                             </li>
-                            <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-circle-check text-brand-500 text-xs"></i>
-                                <span>Ongoing mentorship sessions</span>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
+                                <span>Direct networking with active team members</span>
                             </li>
-                            <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-circle-check text-brand-500 text-xs"></i>
-                                <span>Active team formation</span>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i>
+                                <span>Real-time workshop announcements</span>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <button onclick="handleWhatsAppClick('https://chat.whatsapp.com/JBzIa1K7nla2565NS4uGvv', 'Cycle 1')" class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold text-base transition-all flex items-center justify-center space-x-3 shadow-lg shadow-emerald-900/30">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <button onclick="handleWhatsAppClick('https://chat.whatsapp.com/JBzIa1K7nla2565NS4uGvv', 'ENTREPRENEURSHIP CLUB CYCLE 1')" class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base transition-all flex items-center justify-center space-x-3 shadow-md shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
                             <span>Join Cycle 1 WhatsApp Group</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Cycle 2 Box (November) -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-slate-800 hover:border-blue-500/50 transition-all group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
+                <!-- Cycle 2 Box (Starting in November) -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-brand-200 hover:border-brand-500 transition-all shadow-md flex flex-col justify-between relative overflow-hidden group">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="px-3 py-1 bg-blue-500/20 border border-blue-500/40 text-blue-400 text-xs font-extrabold rounded-full uppercase tracking-wider">
-                                    Starting November
+                                <span class="px-3 py-1 bg-brand-100 text-brand-800 border border-brand-300 text-xs font-black rounded-full uppercase tracking-wider">
+                                    Starting in November
                                 </span>
-                                <h4 class="text-2xl font-bold text-white mt-3">Entrepreneurship Club Cycle 2</h4>
+                                <h4 class="text-2xl font-bold text-brand-900 mt-3">ENTREPRENEURSHIP CLUB CYCLE 2</h4>
                             </div>
-                            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl shrink-0">
-                                <i class="fa-solid fa-calendar-days"></i>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-500 flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-calendar-check"></i>
                             </div>
                         </div>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Pre-registration group for the upcoming November cycle. Ideal for students planning to join the next structured incubator cohort and upcoming guest sessions.
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Pre-registration group for students planning to start with the November cohort kick-off.
                         </p>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-circle-check text-blue-400 text-xs"></i>
-                                <span>Official November onboarding</span>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+                                <span>Official November cohort launch updates</span>
                             </li>
-                            <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-circle-check text-blue-400 text-xs"></i>
-                                <span>Early seat reservation & networking</span>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+                                <span>Early seat reservation for pitch workshops</span>
                             </li>
-                            <li class="flex items-center space-x-2">
-                                <i class="fa-solid fa-circle-check text-blue-400 text-xs"></i>
-                                <span>Prep materials & bootcamp schedules</span>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-check text-brand-500 text-sm"></i>
+                                <span>Pre-incubation prep materials</span>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <button onclick="handleWhatsAppClick('https://chat.whatsapp.com/JcKRndm62tBC92SYEjmRxv', 'Cycle 2')" class="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base transition-all flex items-center justify-center space-x-3 shadow-lg shadow-blue-900/30">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <button onclick="handleWhatsAppClick('https://chat.whatsapp.com/JcKRndm62tBC92SYEjmRxv', 'ENTREPRENEURSHIP CLUB CYCLE 2')" class="w-full py-4 px-6 rounded-xl bg-purple-gradient hover:bg-brand-600 text-white font-bold text-base transition-all flex items-center justify-center space-x-3 shadow-md shadow-brand-500/20">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
                             <span>Join Cycle 2 WhatsApp Group</span>
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Form Section -->
-    <section id="form-section" class="py-20 bg-slate-900/40 relative border-t border-slate-800">
+    <section id="form-section" class="py-20 bg-white border-t border-brand-100 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold rounded-full uppercase">Step 1 Required</span>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">IU Student Registration Form</h3>
-                <p class="text-slate-400 mt-2">Complete the embedded form below or open it in a new window to officially enroll.</p>
+                <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-extrabold rounded-full uppercase tracking-wider">Mandatory Step 1</span>
+                <h3 class="font-brand text-2xl sm:text-3xl font-black text-brand-900 uppercase mt-3">Student Registration Form</h3>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Fill out the form embedded below or open it directly in a new window.</p>
             </div>
 
-            <!-- Form Action Buttons Bar -->
+            <!-- Form Quick Link Actions -->
             <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScW0QRa71jt2cMuwczAGrN_Ya3YQX7LUqwnb-JrjF1OtYJAmw/viewform" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-700 transition-all flex items-center space-x-2 shadow-md">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScW0QRa71jt2cMuwczAGrN_Ya3YQX7LUqwnb-JrjF1OtYJAmw/viewform" target="_blank" class="px-6 py-3 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-900 font-bold text-sm border border-brand-200 transition-all flex items-center space-x-2 shadow-sm">
                     <i class="fa-solid fa-up-right-from-square text-xs text-brand-500"></i>
-                    <span>Open Form in New Tab</span>
+                    <span>Open Form in New Window</span>
                 </a>
-                <button onclick="copyFormLink()" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-sm border border-slate-700 transition-all flex items-center space-x-2">
-                    <i class="fa-solid fa-copy text-xs text-blue-400"></i>
+                <button onclick="copyFormLink()" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm border border-slate-300 transition-all flex items-center space-x-2">
+                    <i class="fa-solid fa-copy text-xs text-brand-500"></i>
                     <span id="copy-btn-text">Copy Form Link</span>
                 </button>
             </div>
 
-            <!-- Embedded Google Form Container -->
-            <div class="max-w-4xl mx-auto glass-card rounded-3xl overflow-hidden p-2 sm:p-4 border border-slate-800 shadow-2xl">
+            <!-- Embedded Google Form Frame Container -->
+            <div class="max-w-4xl mx-auto bg-slate-50 rounded-3xl overflow-hidden p-2 sm:p-4 border-2 border-brand-100 shadow-xl">
                 <div class="w-full bg-white rounded-2xl overflow-hidden min-h-[700px] relative">
-                    <!-- Loading Placeholder -->
-                    <div id="form-loader" class="absolute inset-0 bg-slate-900 flex flex-col items-center justify-center text-slate-400">
-                        <i class="fa-solid fa-circle-notch fa-spin text-3xl text-brand-500 mb-3"></i>
-                        <span>Loading official registration form...</span>
+                    <!-- Loading State Spinner -->
+                    <div id="form-loader" class="absolute inset-0 bg-brand-50 flex flex-col items-center justify-center text-brand-900">
+                        <i class="fa-solid fa-circle-notch fa-spin text-4xl text-brand-500 mb-4"></i>
+                        <span class="font-bold text-sm uppercase tracking-wider">Loading Official Registration Form...</span>
                     </div>
                     
                     <!-- Google Form iFrame -->
@@ -405,104 +408,96 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 relative">
+    <section id="faq" class="py-20 bg-brand-lightBg relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Got Questions?</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h3>
+            <div class="text-center mb-14">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Need Assistance?</h2>
+                <h3 class="font-brand text-2xl sm:text-3xl font-black text-brand-900 uppercase">Frequently Asked Questions</h3>
             </div>
 
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="glass-card rounded-2xl p-6 border-slate-800">
-                    <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center text-left font-bold text-lg text-white">
-                        <span>Which cycle should I register for?</span>
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-brand-100 shadow-sm">
+                    <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center text-left font-bold text-lg text-brand-900">
+                        <span>Which cycle should I join?</span>
                         <i id="faq-icon-1" class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300"></i>
                     </button>
-                    <div id="faq-ans-1" class="hidden mt-4 text-slate-400 text-sm leading-relaxed border-t border-slate-800/80 pt-4">
-                        If you want to join ongoing activities, hackathons, and current workshops right away, select <strong>Cycle 1</strong>. If you are preparing for the upcoming semester launch in November, select <strong>Cycle 2</strong>.
+                    <div id="faq-ans-1" class="hidden mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        If you want to participate immediately in ongoing events and workshops, select <strong>ENTREPRENEURSHIP CLUB CYCLE 1</strong>. If you are preparing for the upcoming term start in November, select <strong>ENTREPRENEURSHIP CLUB CYCLE 2</strong>.
                     </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="glass-card rounded-2xl p-6 border-slate-800">
-                    <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center text-left font-bold text-lg text-white">
-                        <span>Do I have to fill out the form before joining the WhatsApp group?</span>
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-brand-100 shadow-sm">
+                    <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center text-left font-bold text-lg text-brand-900">
+                        <span>Is completing the Google Form mandatory before joining WhatsApp?</span>
                         <i id="faq-icon-2" class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300"></i>
                     </button>
-                    <div id="faq-ans-2" class="hidden mt-4 text-slate-400 text-sm leading-relaxed border-t border-slate-800/80 pt-4">
-                        <strong>Yes, absolutely.</strong> Filling out the Google Form registers your student profile with Entrepreneurship Club-IU. WhatsApp groups are used strictly for internal communications and verified student members.
+                    <div id="faq-ans-2" class="hidden mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        <strong>Yes, absolutely.</strong> The registration form logs your student credentials with ENTREPRENEURSHIP CLUB-IU to maintain active student membership records.
                     </div>
                 </div>
 
-                <!-- FAQ Item 3 -->
-                <div class="glass-card rounded-2xl p-6 border-slate-800">
-                    <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center text-left font-bold text-lg text-white">
-                        <span>Is membership in E-Club IU free?</span>
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-brand-100 shadow-sm">
+                    <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center text-left font-bold text-lg text-brand-900">
+                        <span>Is there any fee to join ENTREPRENEURSHIP CLUB-IU?</span>
                         <i id="faq-icon-3" class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300"></i>
                     </button>
-                    <div id="faq-ans-3" class="hidden mt-4 text-slate-400 text-sm leading-relaxed border-t border-slate-800/80 pt-4">
-                        Yes! Membership is 100% free for all registered university students.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="glass-card rounded-2xl p-6 border-slate-800">
-                    <button onclick="toggleFaq(4)" class="w-full flex justify-between items-center text-left font-bold text-lg text-white">
-                        <span>What if I face issues joining the WhatsApp group?</span>
-                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-300"></i>
-                    </button>
-                    <div id="faq-ans-4" class="hidden mt-4 text-slate-400 text-sm leading-relaxed border-t border-slate-800/80 pt-4">
-                        Ensure you have WhatsApp installed on your mobile or desktop browser. If the link fails to open, try copying the group link directly or reaching out to an E-Club representative.
+                    <div id="faq-ans-3" class="hidden mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        No, club membership is completely free for all registered university students.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Verification Modal -->
-    <div id="verify-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="glass-card max-w-md w-full rounded-3xl p-6 sm:p-8 border border-slate-700 shadow-2xl transform scale-95 transition-transform duration-300" id="modal-box">
-            <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-4">
+    <div id="verify-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white max-w-md w-full rounded-3xl p-6 sm:p-8 border-2 border-brand-200 shadow-2xl transform scale-95 transition-transform duration-300 relative" id="modal-box">
+            <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-2xl mb-4">
                 <i class="fa-solid fa-clipboard-check"></i>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Form Completion Check</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                Have you already completed and submitted the official <strong>IU Registration Google Form</strong>?
+            <h3 class="text-2xl font-bold text-brand-900 mb-2">Form Completion Check</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Have you completed and submitted the official <strong>ENTREPRENEURSHIP CLUB-IU</strong> Google Registration Form?
             </p>
             
             <div class="space-y-3">
-                <button id="modal-yes-btn" class="w-full py-3.5 px-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                <button id="modal-yes-btn" class="w-full py-3.5 px-4 rounded-xl bg-purple-gradient text-white font-bold text-sm transition-all flex items-center justify-center space-x-2 shadow-md">
                     <span>Yes, proceed to WhatsApp</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
                 
-                <a href="#form-section" onclick="closeModal()" class="block w-full py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-sm text-center border border-slate-700 transition-all">
-                    No, take me to Form first
+                <a href="#form-section" onclick="closeModal()" class="block w-full py-3.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm text-center transition-all">
+                    No, take me to Registration Form
                 </a>
             </div>
 
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
-                <i class="fa-solid fa-xmark text-lg"></i>
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-sm">
+    <footer class="bg-brand-900 text-slate-300 py-12 text-sm border-t border-brand-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <!-- Brand Info -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-lg bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center text-sm">
-                        IU
-                    </div>
-                    <span class="font-bold text-white">Entrepreneurship Club - IU</span>
+                    <svg class="w-8 h-8 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" rx="28" fill="#FFFFFF"/>
+                        <line x1="50" y1="18" x2="50" y2="82" stroke="#593C8F" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M50 72L50 35" stroke="#593C8F" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M50 60L35 48M35 48L28 50M35 48L32 38" stroke="#593C8F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50 45L40 35M40 35L34 37" stroke="#593C8F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50 32L44 25" stroke="#593C8F" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M68 28L56 50H66L54 74" stroke="#593C8F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-brand font-bold text-white tracking-wide text-sm sm:text-base uppercase">ENTREPRENEURSHIP CLUB-IU</span>
                 </div>
 
-                <!-- Navigation Quick Links -->
-                <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-medium text-slate-400">
+                <!-- Quick Navigation -->
+                <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-semibold text-slate-300 uppercase">
                     <a href="#process" class="hover:text-white transition-colors">Workflow</a>
                     <a href="#cycles" class="hover:text-white transition-colors">Cycle 1</a>
                     <a href="#cycles" class="hover:text-white transition-colors">Cycle 2 (Nov)</a>
@@ -510,19 +505,18 @@
                 </div>
 
                 <!-- Copyright -->
-                <div class="text-xs text-slate-500 text-center md:text-right">
-                    &copy; 2026 Entrepreneurship Club - IU. All rights reserved.
+                <div class="text-xs text-slate-400 text-center md:text-right">
+                    &copy; 2026 ENTREPRENEURSHIP CLUB-IU. All rights reserved.
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Interactions -->
     <script>
         let targetWhatsAppUrl = '';
         const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScW0QRa71jt2cMuwczAGrN_Ya3YQX7LUqwnb-JrjF1OtYJAmw/viewform";
 
-        // Mobile menu toggle
+        // Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -557,7 +551,7 @@
             closeModal();
         });
 
-        // FAQ Toggle
+        // FAQ Toggle Logic
         function toggleFaq(id) {
             const ans = document.getElementById(`faq-ans-${id}`);
             const icon = document.getElementById(`faq-icon-${id}`);
@@ -589,7 +583,7 @@
             }, 2500);
         }
 
-        // Smooth scroll for internal links
+        // Smooth Scrolling for Anchors
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
